@@ -10,9 +10,17 @@ v: 3
 area: SE
 workgroup: tls
 keyword:
+venue:
+  group: "Transport Layer Security"
+  type: "Working Group"
+  mail: "tls@ietf.org"
+  arch:  "https://mailarchive.ietf.org/arch/browse/tls/"
+  github: "bwesterb/draft-westerbaan-tls-keyshare-recommendations"
+  latest: "https://bwesterb.github.io/draft-westerbaan-tls-keyshare-recommendations"
 
 author:
  -
+    ins: B.E. Westerbaan
     fullname: Bas Westerbaan
     organization: Cloudflare
     email: bas@cloudflare.com
@@ -20,6 +28,7 @@ author:
 normative:
 
 informative:
+  RFC9847:
 
 ...
 
