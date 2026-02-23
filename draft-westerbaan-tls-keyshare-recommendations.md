@@ -1,6 +1,6 @@
 ---
 title: "Updated recommendations for TLS keyshares"
-category: standard
+category: std
 
 docname: draft-westerbaan-tls-keyshare-recommendations-latest
 submissiontype: IETF  # also: "independent", "editorial", "IAB", or "IRTF"
