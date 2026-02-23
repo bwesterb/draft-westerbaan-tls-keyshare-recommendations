@@ -3,6 +3,7 @@ title: "Updated recommendations for TLS keyshares"
 category: std
 
 docname: draft-westerbaan-tls-keyshare-recommendations-latest
+updates: 8446, 9325
 submissiontype: IETF  # also: "independent", "editorial", "IAB", or "IRTF"
 number:
 date:
@@ -26,6 +27,8 @@ author:
     email: bas@cloudflare.com
 
 normative:
+  RFC8446:
+  RFC9325:
 
 informative:
   RFC9847:
