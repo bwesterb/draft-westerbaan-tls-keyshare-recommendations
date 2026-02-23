@@ -29,6 +29,8 @@ normative:
 
 informative:
   RFC9847:
+  RFC9794:
+  I-D.ietf-pquip-pqc-engineers:
 
 ...
 
@@ -47,10 +49,12 @@ of the future arrival of cryptographically relevant quantum computers.
 
 # Introduction
 
-A future cryptographically relevant quantum computer can decrypt
-TLS handshakes recorded today that do not post-quantum algorithms for their key shares:
-algorithms designed to be resistant against quantum attack. This threat
-is known as store-now/decrypt-later (SNDL).
+A future cryptographically relevant quantum computer (CRQC)
+{{RFC9794}} can decrypt
+TLS handshakes recorded today that do not use post-quantum algorithms for their key shares:
+algorithms designed to be resistant against quantum attack
+This threat is known as "harvest now, decrypt later" (HNDL)
+{{I-D.ietf-pquip-pqc-engineers}}.
 
 RFC9847 defines the permitted value of the "Recommended" column
 of the [TLS Supported Groups registry](https://www.iana.org/assignments/tls-parameters/tls-parameters.xhtml#tls-parameters-8) as:
@@ -84,7 +88,7 @@ D:
     users SHOULD consult the linked references associated with the item to
     determine the conditions under which the item SHOULD NOT or MUST NOT be used.
 
-Given the SNDL threat, the IETF cannot recommend key shares for general use
+Given the HNDL threat, the IETF cannot recommend key shares for general use
 that do not offer post-quantum resistance, and this document updates
 the [TLS Supported Groups registry](https://www.iana.org/assignments/tls-parameters/tls-parameters.xhtml#tls-parameters-8)
 accordingly.
