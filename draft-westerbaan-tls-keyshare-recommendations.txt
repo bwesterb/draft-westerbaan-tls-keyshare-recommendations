@@ -2,7 +2,7 @@
 
 
 
-tls                                                     B. E. Westerbaan
+Transport Layer Security                                B. E. Westerbaan
 Internet-Draft                                                Cloudflare
 Intended status: Standards Track                        23 February 2026
 Expires: 27 August 2026
@@ -21,8 +21,9 @@ About This Document
 
    The latest revision of this draft can be found at
    https://bwesterb.github.io/draft-westerbaan-tls-keyshare-
-   recommendations.  Status information for this document may be found
-   at https://datatracker.ietf.org/doc/draft-westerbaan-tls-keyshare-
+   recommendations/draft-westerbaan-tls-keyshare-recommendations.html.
+   Status information for this document may be found at
+   https://datatracker.ietf.org/doc/draft-westerbaan-tls-keyshare-
    recommendations/.
 
    Discussion of this document takes place on the Transport Layer
@@ -99,21 +100,19 @@ Table of Contents
    parameters.xhtml#tls-parameters-8), according to the procedures in
    Section 6 of [RFC9847] as follows.
 
-               +=======+====================+=============+
-               | Value | Description        | Recommended |
-               +=======+====================+=============+
-               | 23    | secp256r1          | N           |
-               +-------+--------------------+-------------+
-               | 24    | secp384r1          | N           |
-               +-------+--------------------+-------------+
-               | 29    | x25519             | N           |
-               +-------+--------------------+-------------+
-               | 30    | x448               | N           |
-               +-------+--------------------+-------------+
-               | 4588  | X25519MLKEM768     | Y           |
-               +-------+--------------------+-------------+
-               | 4589  | SecP384r1MLKEM1024 | Y           |
-               +-------+--------------------+-------------+
+                 +=======+================+=============+
+                 | Value | Description    | Recommended |
+                 +=======+================+=============+
+                 | 23    | secp256r1      | N           |
+                 +-------+----------------+-------------+
+                 | 24    | secp384r1      | N           |
+                 +-------+----------------+-------------+
+                 | 29    | x25519         | N           |
+                 +-------+----------------+-------------+
+                 | 30    | x448           | N           |
+                 +-------+----------------+-------------+
+                 | 4588  | X25519MLKEM768 | Y           |
+                 +-------+----------------+-------------+
 
                                  Table 1
 
