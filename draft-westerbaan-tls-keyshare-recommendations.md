@@ -7,16 +7,16 @@ submissiontype: IETF  # also: "independent", "editorial", "IAB", or "IRTF"
 number:
 date:
 v: 3
-area: SE
-workgroup: tls
+area: "Security"
+workgroup: "Transport Layer Security"
 keyword:
 venue:
   group: "Transport Layer Security"
   type: "Working Group"
   mail: "tls@ietf.org"
-  arch:  "https://mailarchive.ietf.org/arch/browse/tls/"
+  arch: "https://mailarchive.ietf.org/arch/browse/tls/"
   github: "bwesterb/draft-westerbaan-tls-keyshare-recommendations"
-  latest: "https://bwesterb.github.io/draft-westerbaan-tls-keyshare-recommendations"
+  latest: "https://bwesterb.github.io/draft-westerbaan-tls-keyshare-recommendations/draft-westerbaan-tls-keyshare-recommendations.html"
 
 author:
  -
