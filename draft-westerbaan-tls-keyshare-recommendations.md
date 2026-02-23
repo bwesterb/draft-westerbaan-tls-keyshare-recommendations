@@ -65,6 +65,5 @@ This document updates the [TLS Supported Groups registry](https://www.iana.org/a
 | 29    | x25519             | N           |
 | 30    | x448               | N           |
 | 4588  | X25519MLKEM768     | Y           |
-| 4589  | SecP384r1MLKEM1024 | Y           |
 
 --- back
