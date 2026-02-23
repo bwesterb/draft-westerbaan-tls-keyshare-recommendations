@@ -88,10 +88,11 @@ Table of Contents
 
 1.  Introduction
 
-   A future cryptographically relevant quantum computer can decrypt TLS
-   handshakes recorded today that do not post-quantum algorithms for
-   their key shares: algorithms designed to be resistant against quantum
-   attack.  This threat is known as store-now/decrypt-later (SNDL).
+   A future cryptographically relevant quantum computer (CRQC) [RFC9794]
+   can decrypt TLS handshakes recorded today that do not use post-
+   quantum algorithms for their key shares: algorithms designed to be
+   resistant against quantum attack This threat is known as "harvest
+   now, decrypt later" (HNDL) [I-D.ietf-pquip-pqc-engineers].
 
    RFC9847 defines the permitted value of the "Recommended" column of
    the TLS Supported Groups registry (https://www.iana.org/assignments/
@@ -124,7 +125,7 @@ Table of Contents
       determine the conditions under which the item SHOULD NOT or MUST
       NOT be used.
 
-   Given the SNDL threat, the IETF cannot recommend key shares for
+   Given the HNDL threat, the IETF cannot recommend key shares for
    general use that do not offer post-quantum resistance, and this
    document updates the TLS Supported Groups registry
    (https://www.iana.org/assignments/tls-parameters/tls-
@@ -376,6 +377,19 @@ Table of Contents
               May 2017, <https://www.rfc-editor.org/rfc/rfc8174>.
 
 5.2.  Informative References
+
+   [I-D.ietf-pquip-pqc-engineers]
+              Banerjee, A., Reddy.K, T., Schoinianakis, D., Hollebeek,
+              T., and M. Ounsworth, "Post-Quantum Cryptography for
+              Engineers", Work in Progress, Internet-Draft, draft-ietf-
+              pquip-pqc-engineers-14, 25 August 2025,
+              <https://datatracker.ietf.org/doc/html/draft-ietf-pquip-
+              pqc-engineers-14>.
+
+   [RFC9794]  Driscoll, F., Parsons, M., and B. Hale, "Terminology for
+              Post-Quantum Traditional Hybrid Schemes", RFC 9794,
+              DOI 10.17487/RFC9794, June 2025,
+              <https://www.rfc-editor.org/rfc/rfc9794>.
 
    [RFC9847]  Salowey, J. and S. Turner, "IANA Registry Updates for TLS
               and DTLS", RFC 9847, DOI 10.17487/RFC9847, December 2025,
