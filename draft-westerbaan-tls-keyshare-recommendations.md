@@ -157,6 +157,8 @@ This document updates the [TLS Supported Groups registry](https://www.iana.org/a
 | 258   | ffdhe4096          | D           | Vulnerable to store-now/decrypt-later quantum attack, see TBA:this-document |
 | 259   | ffdhe6144          | D           | Vulnerable to store-now/decrypt-later quantum attack, see TBA:this-document |
 | 260   | ffdhe8192          | D           | Vulnerable to store-now/decrypt-later quantum attack, see TBA:this-document |
+| 65281 | arbitrary_explicit_prime_curves | D | Vulnerable to store-now/decrypt-later quantum attack, see TBA:this-document |
+| 65282 | arbitrary_explicit_char2_curves | D | Vulnerable to store-now/decrypt-later quantum attack, see TBA:this-document |
 
 
 --- back
