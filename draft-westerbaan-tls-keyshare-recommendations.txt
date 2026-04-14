@@ -4,9 +4,9 @@
 
 Transport Layer Security                                B. E. Westerbaan
 Internet-Draft                                                Cloudflare
-Updates: 8446, 9325 (if approved)                       23 February 2026
+Updates: 8446, 9325 (if approved)                          14 April 2026
 Intended status: Standards Track                                        
-Expires: 27 August 2026
+Expires: 16 October 2026
 
 
                Updated recommendations for TLS keyshares
@@ -14,10 +14,10 @@ Expires: 27 August 2026
 
 Abstract
 
-   This document updates the recommendations for key shares algorithms
-   (TLS supported groups; previously EC Named Curve Registry) in the
-   light of the future arrival of cryptographically relevant quantum
-   computers.
+   This document recommends X25519MLKEM768 for use in TLS by updating
+   its entry in the TLS Supported Groups registry (previously EC Named
+   Curve Registry) to Recommended in the light of the future arrival of
+   cryptographically relevant quantum computers.
 
    [[ NOTE I use key share in the title and here as it's more accurate
    than "group" and perhaps more well known in the context TLS than key
@@ -58,7 +58,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 27 August 2026.
+   This Internet-Draft will expire on 16 October 2026.
 
 Copyright Notice
 
@@ -80,8 +80,6 @@ Table of Contents
    2.  Conventions and Definitions
    3.  Security Considerations
    4.  IANA Considerations
-     4.1.  Recommend
-     4.2.  Discourage
    5.  References
      5.1.  Normative References
      5.2.  Informative References
@@ -92,48 +90,14 @@ Table of Contents
    A future cryptographically relevant quantum computer (CRQC) [RFC9794]
    can decrypt TLS handshakes recorded today that do not use post-
    quantum algorithms for their key shares: algorithms designed to be
-   resistant against quantum attack This threat is known as "harvest
+   resistant against quantum attack.  This threat is known as "harvest
    now, decrypt later" (HNDL) [I-D.ietf-pquip-pqc-engineers].
 
-   RFC9847 defines the permitted value of the "Recommended" column of
-   the TLS Supported Groups registry (https://www.iana.org/assignments/
-   tls-parameters/tls-parameters.xhtml#tls-parameters-8) as:
-
-   Y:  Indicates that the IETF has consensus that the item is
-      RECOMMENDED.  This only means that the associated mechanism is fit
-      for the purpose for which it was defined.  Careful reading of the
-      documentation for the mechanism is necessary to understand the
-      applicability of that mechanism.  The IETF could recommend
-      mechanisms that have limited applicability, but will provide
-      applicability statements that describe any limitations of the
-      mechanism or necessary constraints on its use.
-
-   N:  Indicates that the item has not been evaluated by the IETF and
-      that the IETF has made no statement about the suitability of the
-      associated mechanism.  This does not necessarily mean that the
-      mechanism is flawed, only that no consensus exists.  The IETF
-      might have consensus to leave an items marked as "N" on the basis
-      of its having limited applicability or usage constraints.
-
-   D:  Indicates that the item is discouraged.  This marking could be
-      used to identify mechanisms that might result in problems if they
-      are used, such as a weak cryptographic algorithm or a mechanism
-      that might cause interoperability problems in deployment.  When
-      marking a registry entry as “D”, either the References or the
-      Comments Column MUST include sufficient information to determine
-      why the marking has been applied.  Implementers and users SHOULD
-      consult the linked references associated with the item to
-      determine the conditions under which the item SHOULD NOT or MUST
-      NOT be used.
-
-   Given the HNDL threat, the IETF cannot recommend key shares for
-   general use that do not offer post-quantum resistance, and this
-   document updates the TLS Supported Groups registry
-   (https://www.iana.org/assignments/tls-parameters/tls-
-   parameters.xhtml#tls-parameters-8) accordingly.
-
-   Among the currently registered post-quantum key share algorithms,
-   IETF recommends X25519MLKEM768 for its widespread support.
+   To address this threat, this document updates the TLS Supported
+   Groups registry (https://www.iana.org/assignments/tls-parameters/tls-
+   parameters.xhtml#tls-parameters-8) to mark X25519MLKEM768 as
+   Recommended (Y) as defined in Section 6 of [RFC9847], as it is a
+   post-quantum key share with widespread support.
 
 2.  Conventions and Definitions
 
@@ -160,8 +124,6 @@ Table of Contents
    parameters.xhtml#tls-parameters-8), according to the procedures in
    Section 6 of [RFC9847] as follows.
 
-4.1.  Recommend
-
                  +=======+================+=============+
                  | Value | Description    | Recommended |
                  +=======+================+=============+
@@ -169,245 +131,6 @@ Table of Contents
                  +-------+----------------+-------------+
 
                                  Table 1
-
-4.2.  Discourage
-
-   +=====+===============================+===========+=================+
-   |Value|Description                    |Recommended| Comment         |
-   +=====+===============================+===========+=================+
-   |9    |sect283k1                      |D          | Vulnerable to   |
-   |     |                               |           | store-now/      |
-   |     |                               |           | decrypt-later   |
-   |     |                               |           | quantum attack, |
-   |     |                               |           | see TBA:this-   |
-   |     |                               |           | document        |
-   +-----+-------------------------------+-----------+-----------------+
-   |10   |sect283r1                      |D          | Vulnerable to   |
-   |     |                               |           | store-now/      |
-   |     |                               |           | decrypt-later   |
-   |     |                               |           | quantum attack, |
-   |     |                               |           | see TBA:this-   |
-   |     |                               |           | document        |
-   +-----+-------------------------------+-----------+-----------------+
-   |11   |sect409k1                      |D          | Vulnerable to   |
-   |     |                               |           | store-now/      |
-   |     |                               |           | decrypt-later   |
-   |     |                               |           | quantum attack, |
-   |     |                               |           | see TBA:this-   |
-   |     |                               |           | document        |
-   +-----+-------------------------------+-----------+-----------------+
-   |12   |sect409r1                      |D          | Vulnerable to   |
-   |     |                               |           | store-now/      |
-   |     |                               |           | decrypt-later   |
-   |     |                               |           | quantum attack, |
-   |     |                               |           | see TBA:this-   |
-   |     |                               |           | document        |
-   +-----+-------------------------------+-----------+-----------------+
-   |13   |sect571k1                      |D          | Vulnerable to   |
-   |     |                               |           | store-now/      |
-   |     |                               |           | decrypt-later   |
-   |     |                               |           | quantum attack, |
-   |     |                               |           | see TBA:this-   |
-   |     |                               |           | document        |
-   +-----+-------------------------------+-----------+-----------------+
-   |14   |sect571r1                      |D          | Vulnerable to   |
-   |     |                               |           | store-now/      |
-   |     |                               |           | decrypt-later   |
-   |     |                               |           | quantum attack, |
-   |     |                               |           | see TBA:this-   |
-   |     |                               |           | document        |
-   +-----+-------------------------------+-----------+-----------------+
-   |22   |secp256k1                      |D          | Vulnerable to   |
-   |     |                               |           | store-now/      |
-   |     |                               |           | decrypt-later   |
-   |     |                               |           | quantum attack, |
-   |     |                               |           | see TBA:this-   |
-   |     |                               |           | document        |
-   +-----+-------------------------------+-----------+-----------------+
-   |23   |secp256r1                      |D          | Vulnerable to   |
-   |     |                               |           | store-now/      |
-   |     |                               |           | decrypt-later   |
-   |     |                               |           | quantum attack, |
-   |     |                               |           | see TBA:this-   |
-   |     |                               |           | document        |
-   +-----+-------------------------------+-----------+-----------------+
-   |24   |secp384r1                      |D          | Vulnerable to   |
-   |     |                               |           | store-now/      |
-   |     |                               |           | decrypt-later   |
-   |     |                               |           | quantum attack, |
-   |     |                               |           | see TBA:this-   |
-   |     |                               |           | document        |
-   +-----+-------------------------------+-----------+-----------------+
-   |25   |secp521r1                      |D          | Vulnerable to   |
-   |     |                               |           | store-now/      |
-   |     |                               |           | decrypt-later   |
-   |     |                               |           | quantum attack, |
-   |     |                               |           | see TBA:this-   |
-   |     |                               |           | document        |
-   +-----+-------------------------------+-----------+-----------------+
-   |26   |brainpoolP256r1                |D          | Vulnerable to   |
-   |     |                               |           | store-now/      |
-   |     |                               |           | decrypt-later   |
-   |     |                               |           | quantum attack, |
-   |     |                               |           | see TBA:this-   |
-   |     |                               |           | document        |
-   +-----+-------------------------------+-----------+-----------------+
-   |27   |brainpoolP384r1                |D          | Vulnerable to   |
-   |     |                               |           | store-now/      |
-   |     |                               |           | decrypt-later   |
-   |     |                               |           | quantum attack, |
-   |     |                               |           | see TBA:this-   |
-   |     |                               |           | document        |
-   +-----+-------------------------------+-----------+-----------------+
-   |28   |brainpoolP512r1                |D          | Vulnerable to   |
-   |     |                               |           | store-now/      |
-   |     |                               |           | decrypt-later   |
-   |     |                               |           | quantum attack, |
-   |     |                               |           | see TBA:this-   |
-   |     |                               |           | document        |
-   +-----+-------------------------------+-----------+-----------------+
-   |29   |x25519                         |D          | Vulnerable to   |
-   |     |                               |           | store-now/      |
-   |     |                               |           | decrypt-later   |
-   |     |                               |           | quantum attack, |
-   |     |                               |           | see TBA:this-   |
-   |     |                               |           | document        |
-   +-----+-------------------------------+-----------+-----------------+
-   |30   |x448                           |D          | Vulnerable to   |
-   |     |                               |           | store-now/      |
-   |     |                               |           | decrypt-later   |
-   |     |                               |           | quantum attack, |
-   |     |                               |           | see TBA:this-   |
-   |     |                               |           | document        |
-   +-----+-------------------------------+-----------+-----------------+
-   |31   |brainpoolP256r1tls13           |D          | Vulnerable to   |
-   |     |                               |           | store-now/      |
-   |     |                               |           | decrypt-later   |
-   |     |                               |           | quantum attack, |
-   |     |                               |           | see TBA:this-   |
-   |     |                               |           | document        |
-   +-----+-------------------------------+-----------+-----------------+
-   |32   |brainpoolP384r1tls13           |D          | Vulnerable to   |
-   |     |                               |           | store-now/      |
-   |     |                               |           | decrypt-later   |
-   |     |                               |           | quantum attack, |
-   |     |                               |           | see TBA:this-   |
-   |     |                               |           | document        |
-   +-----+-------------------------------+-----------+-----------------+
-   |33   |brainpoolP512r1tls13           |D          | Vulnerable to   |
-   |     |                               |           | store-now/      |
-   |     |                               |           | decrypt-later   |
-   |     |                               |           | quantum attack, |
-   |     |                               |           | see TBA:this-   |
-   |     |                               |           | document        |
-   +-----+-------------------------------+-----------+-----------------+
-   |34   |GC256A                         |D          | Vulnerable to   |
-   |     |                               |           | store-now/      |
-   |     |                               |           | decrypt-later   |
-   |     |                               |           | quantum attack, |
-   |     |                               |           | see TBA:this-   |
-   |     |                               |           | document        |
-   +-----+-------------------------------+-----------+-----------------+
-   |35   |GC256B                         |D          | Vulnerable to   |
-   |     |                               |           | store-now/      |
-   |     |                               |           | decrypt-later   |
-   |     |                               |           | quantum attack, |
-   |     |                               |           | see TBA:this-   |
-   |     |                               |           | document        |
-   +-----+-------------------------------+-----------+-----------------+
-   |36   |GC256C                         |D          | Vulnerable to   |
-   |     |                               |           | store-now/      |
-   |     |                               |           | decrypt-later   |
-   |     |                               |           | quantum attack, |
-   |     |                               |           | see TBA:this-   |
-   |     |                               |           | document        |
-   +-----+-------------------------------+-----------+-----------------+
-   |37   |GC256D                         |D          | Vulnerable to   |
-   |     |                               |           | store-now/      |
-   |     |                               |           | decrypt-later   |
-   |     |                               |           | quantum attack, |
-   |     |                               |           | see TBA:this-   |
-   |     |                               |           | document        |
-   +-----+-------------------------------+-----------+-----------------+
-   |38   |GC512A                         |D          | Vulnerable to   |
-   |     |                               |           | store-now/      |
-   |     |                               |           | decrypt-later   |
-   |     |                               |           | quantum attack, |
-   |     |                               |           | see TBA:this-   |
-   |     |                               |           | document        |
-   +-----+-------------------------------+-----------+-----------------+
-   |39   |GC512B                         |D          | Vulnerable to   |
-   |     |                               |           | store-now/      |
-   |     |                               |           | decrypt-later   |
-   |     |                               |           | quantum attack, |
-   |     |                               |           | see TBA:this-   |
-   |     |                               |           | document        |
-   +-----+-------------------------------+-----------+-----------------+
-   |40   |GC512C                         |D          | Vulnerable to   |
-   |     |                               |           | store-now/      |
-   |     |                               |           | decrypt-later   |
-   |     |                               |           | quantum attack, |
-   |     |                               |           | see TBA:this-   |
-   |     |                               |           | document        |
-   +-----+-------------------------------+-----------+-----------------+
-   |41   |curveSM2                       |D          | Vulnerable to   |
-   |     |                               |           | store-now/      |
-   |     |                               |           | decrypt-later   |
-   |     |                               |           | quantum attack, |
-   |     |                               |           | see TBA:this-   |
-   |     |                               |           | document        |
-   +-----+-------------------------------+-----------+-----------------+
-   |256  |ffdhe2048                      |D          | Vulnerable to   |
-   |     |                               |           | store-now/      |
-   |     |                               |           | decrypt-later   |
-   |     |                               |           | quantum attack, |
-   |     |                               |           | see TBA:this-   |
-   |     |                               |           | document        |
-   +-----+-------------------------------+-----------+-----------------+
-   |257  |ffdhe3072                      |D          | Vulnerable to   |
-   |     |                               |           | store-now/      |
-   |     |                               |           | decrypt-later   |
-   |     |                               |           | quantum attack, |
-   |     |                               |           | see TBA:this-   |
-   |     |                               |           | document        |
-   +-----+-------------------------------+-----------+-----------------+
-   |258  |ffdhe4096                      |D          | Vulnerable to   |
-   |     |                               |           | store-now/      |
-   |     |                               |           | decrypt-later   |
-   |     |                               |           | quantum attack, |
-   |     |                               |           | see TBA:this-   |
-   |     |                               |           | document        |
-   +-----+-------------------------------+-----------+-----------------+
-   |259  |ffdhe6144                      |D          | Vulnerable to   |
-   |     |                               |           | store-now/      |
-   |     |                               |           | decrypt-later   |
-   |     |                               |           | quantum attack, |
-   |     |                               |           | see TBA:this-   |
-   |     |                               |           | document        |
-   +-----+-------------------------------+-----------+-----------------+
-   |260  |ffdhe8192                      |D          | Vulnerable to   |
-   |     |                               |           | store-now/      |
-   |     |                               |           | decrypt-later   |
-   |     |                               |           | quantum attack, |
-   |     |                               |           | see TBA:this-   |
-   |     |                               |           | document        |
-   +-----+-------------------------------+-----------+-----------------+
-   |65281|arbitrary_explicit_prime_curves|D          | Vulnerable to   |
-   |     |                               |           | store-now/      |
-   |     |                               |           | decrypt-later   |
-   |     |                               |           | quantum attack, |
-   |     |                               |           | see TBA:this-   |
-   |     |                               |           | document        |
-   +-----+-------------------------------+-----------+-----------------+
-   |65282|arbitrary_explicit_char2_curves|D          | Vulnerable to   |
-   |     |                               |           | store-now/      |
-   |     |                               |           | decrypt-later   |
-   |     |                               |           | quantum attack, |
-   |     |                               |           | see TBA:this-   |
-   |     |                               |           | document        |
-   +-----+-------------------------------+-----------+-----------------+
-
-                                  Table 2
 
 5.  References
 
@@ -432,6 +155,10 @@ Table of Contents
               (DTLS)", BCP 195, RFC 9325, DOI 10.17487/RFC9325, November
               2022, <https://www.rfc-editor.org/rfc/rfc9325>.
 
+   [RFC9847]  Salowey, J. and S. Turner, "IANA Registry Updates for TLS
+              and DTLS", RFC 9847, DOI 10.17487/RFC9847, December 2025,
+              <https://www.rfc-editor.org/rfc/rfc9847>.
+
 5.2.  Informative References
 
    [I-D.ietf-pquip-pqc-engineers]
@@ -446,10 +173,6 @@ Table of Contents
               Post-Quantum Traditional Hybrid Schemes", RFC 9794,
               DOI 10.17487/RFC9794, June 2025,
               <https://www.rfc-editor.org/rfc/rfc9794>.
-
-   [RFC9847]  Salowey, J. and S. Turner, "IANA Registry Updates for TLS
-              and DTLS", RFC 9847, DOI 10.17487/RFC9847, December 2025,
-              <https://www.rfc-editor.org/rfc/rfc9847>.
 
 Author's Address
 
