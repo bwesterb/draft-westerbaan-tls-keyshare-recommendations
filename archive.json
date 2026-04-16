@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2026-04-14T03:28:20.737626+00:00",
+  "timestamp": "2026-04-16T03:34:23.864088+00:00",
   "repo": "bwesterb/draft-westerbaan-tls-keyshare-recommendations",
   "labels": [
     {
@@ -50,5 +50,136 @@
     }
   ],
   "issues": [],
-  "pulls": []
+  "pulls": [
+    {
+      "number": 1,
+      "id": "PR_kwDORWyibc7SQla9",
+      "title": "Add Usama as coauthor",
+      "url": "https://github.com/bwesterb/draft-westerbaan-tls-keyshare-recommendations/pull/1",
+      "state": "MERGED",
+      "author": "bwesterb",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2026-04-14T09:33:45Z",
+      "updatedAt": "2026-04-14T12:22:51Z",
+      "baseRepository": "bwesterb/draft-westerbaan-tls-keyshare-recommendations",
+      "baseRefName": "main",
+      "baseRefOid": "5776ff5c934e1a31d2b0536c2bab4516836da783",
+      "headRepository": "bwesterb/draft-westerbaan-tls-keyshare-recommendations",
+      "headRefName": "usama",
+      "headRefOid": "7fc5d8e4aa7be91393dad943d3abc5f7f5726e57",
+      "closedAt": "2026-04-14T12:22:51Z",
+      "mergedAt": "2026-04-14T12:22:51Z",
+      "mergedBy": "bwesterb",
+      "mergeCommit": {
+        "oid": "1a6b21a24df573bf7f2ec0f16287f6530061b123"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDORWyibc70sjbc",
+          "commit": {
+            "abbreviatedOid": "7fc5d8e"
+          },
+          "author": "muhammad-usama-sardar",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2026-04-14T10:53:24Z",
+          "updatedAt": "2026-04-14T10:53:24Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 2,
+      "id": "PR_kwDORWyibc7SQtP2",
+      "title": "Set recommended=N for quantum vulnerable key shares",
+      "url": "https://github.com/bwesterb/draft-westerbaan-tls-keyshare-recommendations/pull/2",
+      "state": "OPEN",
+      "author": "bwesterb",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2026-04-14T09:41:19Z",
+      "updatedAt": "2026-04-14T13:02:42Z",
+      "baseRepository": "bwesterb/draft-westerbaan-tls-keyshare-recommendations",
+      "baseRefName": "main",
+      "baseRefOid": "5776ff5c934e1a31d2b0536c2bab4516836da783",
+      "headRepository": "bwesterb/draft-westerbaan-tls-keyshare-recommendations",
+      "headRefName": "dont-recommend-non-pq",
+      "headRefOid": "92c093a3e6b15d9870a9c2a46e52f172cbe90045",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDORWyibc70vefx",
+          "commit": {
+            "abbreviatedOid": "92c093a"
+          },
+          "author": "muhammad-usama-sardar",
+          "authorAssociation": "COLLABORATOR",
+          "state": "CHANGES_REQUESTED",
+          "body": "Personally, I am strongly opposed to this PR. My strong preference is that we should not let (arguably unnecessary) debates on traditionals stand in the way of recommending the hybrids. The former can be done separately later on in a new draft.",
+          "createdAt": "2026-04-14T13:02:42Z",
+          "updatedAt": "2026-04-14T13:02:42Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 3,
+      "id": "PR_kwDORWyibc7SQyPD",
+      "title": "Recommend SecP256r1MLKEM768 and SecP384r1MLKEM1024 as well",
+      "url": "https://github.com/bwesterb/draft-westerbaan-tls-keyshare-recommendations/pull/3",
+      "state": "OPEN",
+      "author": "bwesterb",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2026-04-14T09:46:01Z",
+      "updatedAt": "2026-04-14T12:37:17Z",
+      "baseRepository": "bwesterb/draft-westerbaan-tls-keyshare-recommendations",
+      "baseRefName": "main",
+      "baseRefOid": "5776ff5c934e1a31d2b0536c2bab4516836da783",
+      "headRepository": "bwesterb/draft-westerbaan-tls-keyshare-recommendations",
+      "headRefName": "recommend-all-three",
+      "headRefOid": "e0664d0eeee7015c81991df0060e8fdcbbb49421",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [
+        {
+          "author": "bwesterb",
+          "authorAssociation": "OWNER",
+          "body": "There have been some people in favor of this change, hence I created the PR for discussion. Personally I dislike it: there is a real risk in fragmenting the ecosystem. Also there is little difference between the P256 and X25519 hybrid. The P256 is available anyway, why the need to recommend it?",
+          "createdAt": "2026-04-14T12:37:17Z",
+          "updatedAt": "2026-04-14T12:37:17Z"
+        }
+      ],
+      "reviews": [
+        {
+          "id": "PRR_kwDORWyibc70slAO",
+          "commit": {
+            "abbreviatedOid": "e0664d0"
+          },
+          "author": "muhammad-usama-sardar",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2026-04-14T10:54:43Z",
+          "updatedAt": "2026-04-14T10:54:43Z",
+          "comments": []
+        }
+      ]
+    }
+  ]
 }
