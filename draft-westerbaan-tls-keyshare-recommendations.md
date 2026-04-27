@@ -85,6 +85,10 @@ Before the arrival of a CRQC,
 a TLS connection that negotiated a non-post quantum key share can be recorded
 and decrypted in the future.
 
+After the arrival of a CRQC, allowing a non-post quantum key share to be
+negotiated allows for an active quantum attack that achieves MITM,
+even if the server certificate is post quantum.
+
 # IANA Considerations
 
 This document updates the [TLS Supported Groups registry](https://www.iana.org/assignments/tls-parameters/tls-parameters.xhtml#tls-parameters-8), according to the procedures in {{Section 6 of RFC9847}} as follows.
