@@ -6,7 +6,7 @@ Transport Layer Security                                B. E. Westerbaan
 Internet-Draft                                                Cloudflare
 Updates: 8446, 9325 (if approved)                        M. Usama Sardar
 Intended status: Standards Track                              TU Dresden
-Expires: 22 October 2026                                   20 April 2026
+Expires: 29 October 2026                                   27 April 2026
 
 
                Updated recommendations for TLS keyshares
@@ -58,7 +58,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 22 October 2026.
+   This Internet-Draft will expire on 29 October 2026.
 
 Copyright Notice
 
@@ -111,6 +111,10 @@ Table of Contents
 
    Before the arrival of a CRQC, a TLS connection that negotiated a non-
    post quantum key share can be recorded and decrypted in the future.
+
+   After the arrival of a CRQC, allowing a non-post quantum key share to
+   be negotiated allows for an active quantum attack that achieves MITM,
+   even if the server certificate is post quantum.
 
 4.  IANA Considerations
 
