@@ -51,7 +51,7 @@ by updating its entry in the TLS Supported Groups registry
 to Recommended in the light
 of the future arrival of cryptographically relevant quantum computers.
 
-[[ NOTE I use key share in the title and here as it's more accurate
+[[ NOTE We use key share in the title and here as it's more accurate
    than "group" and perhaps more well known in the context TLS
    than key agreement or key exchange. ]]
 
@@ -81,9 +81,9 @@ as it is a post-quantum key share with widespread support.
 
 # Security Considerations
 
-Before the arrival of a cryptographically relevant quantum computer (CRQC),
+Before the arrival of a CRQC,
 a TLS connection that negotiated a non-post quantum key share can be recorded
-decrypted in the future.
+and decrypted in the future.
 
 After the arrival of a CRQC, allowing a non-post quantum key share to be
 negotiated allows for an active quantum attack that achieves MITM,
