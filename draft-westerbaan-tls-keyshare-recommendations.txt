@@ -6,7 +6,7 @@ Transport Layer Security                                B. E. Westerbaan
 Internet-Draft                                                Cloudflare
 Updates: 8446, 9325 (if approved)                        M. Usama Sardar
 Intended status: Standards Track                              TU Dresden
-Expires: 16 October 2026                                   14 April 2026
+Expires: 30 October 2026                                   28 April 2026
 
 
                Updated recommendations for TLS keyshares
@@ -19,7 +19,7 @@ Abstract
    Curve Registry) to Recommended in the light of the future arrival of
    cryptographically relevant quantum computers.
 
-   [[ NOTE I use key share in the title and here as it's more accurate
+   [[ NOTE We use key share in the title and here as it's more accurate
    than "group" and perhaps more well known in the context TLS than key
    agreement or key exchange. ]]
 
@@ -58,7 +58,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 16 October 2026.
+   This Internet-Draft will expire on 30 October 2026.
 
 Copyright Notice
 
@@ -109,9 +109,8 @@ Table of Contents
 
 3.  Security Considerations
 
-   Before the arrival of a cryptographically relevant quantum computer
-   (CRQC), a TLS connection that negotiated a non-post quantum key share
-   can be recorded decrypted in the future.
+   Before the arrival of a CRQC, a TLS connection that negotiated a non-
+   post quantum key share can be recorded and decrypted in the future.
 
    After the arrival of a CRQC, allowing a non-post quantum key share to
    be negotiated allows for an active quantum attack that achieves MITM,
