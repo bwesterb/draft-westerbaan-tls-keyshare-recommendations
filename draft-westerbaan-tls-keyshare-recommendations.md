@@ -1,5 +1,5 @@
 ---
-title: "Updated recommendations for TLS keyshares"
+title: "Updated Recommendations For TLS Key Shares"
 category: std
 
 docname: draft-westerbaan-tls-keyshare-recommendations-latest
