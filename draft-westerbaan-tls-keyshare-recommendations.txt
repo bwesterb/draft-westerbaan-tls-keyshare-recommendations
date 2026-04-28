@@ -9,7 +9,7 @@ Intended status: Standards Track                              TU Dresden
 Expires: 30 October 2026                                   28 April 2026
 
 
-               Updated Recommendations For TLS Key Shares
+               Updated Recommendations for TLS Key Shares
           draft-westerbaan-tls-keyshare-recommendations-latest
 
 Abstract
