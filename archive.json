@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2026-04-28T03:52:16.817888+00:00",
+  "timestamp": "2026-04-30T03:50:20.771400+00:00",
   "repo": "bwesterb/draft-westerbaan-tls-keyshare-recommendations",
   "labels": [
     {
@@ -105,7 +105,7 @@
       "labels": [],
       "body": "",
       "createdAt": "2026-04-14T09:41:19Z",
-      "updatedAt": "2026-04-14T13:02:42Z",
+      "updatedAt": "2026-04-28T22:42:40Z",
       "baseRepository": "bwesterb/draft-westerbaan-tls-keyshare-recommendations",
       "baseRefName": "main",
       "baseRefOid": "5776ff5c934e1a31d2b0536c2bab4516836da783",
@@ -116,7 +116,15 @@
       "mergedAt": null,
       "mergedBy": null,
       "mergeCommit": null,
-      "comments": [],
+      "comments": [
+        {
+          "author": "richsalz",
+          "authorAssociation": "NONE",
+          "body": "Making a PQ/T hybrid recommended is one thing.  Make traditional KX be not recommended should be argued in a separate draft.",
+          "createdAt": "2026-04-28T22:42:40Z",
+          "updatedAt": "2026-04-28T22:42:40Z"
+        }
+      ],
       "reviews": [
         {
           "id": "PRR_kwDORWyibc70vefx",
@@ -145,7 +153,7 @@
       "labels": [],
       "body": "",
       "createdAt": "2026-04-14T09:46:01Z",
-      "updatedAt": "2026-04-14T12:37:17Z",
+      "updatedAt": "2026-04-28T21:26:42Z",
       "baseRepository": "bwesterb/draft-westerbaan-tls-keyshare-recommendations",
       "baseRefName": "main",
       "baseRefOid": "5776ff5c934e1a31d2b0536c2bab4516836da783",
@@ -163,6 +171,34 @@
           "body": "There have been some people in favor of this change, hence I created the PR for discussion. Personally I dislike it: there is a real risk in fragmenting the ecosystem. Also there is little difference between the P256 and X25519 hybrid. The P256 is available anyway, why the need to recommend it?",
           "createdAt": "2026-04-14T12:37:17Z",
           "updatedAt": "2026-04-14T12:37:17Z"
+        },
+        {
+          "author": "muhammad-usama-sardar",
+          "authorAssociation": "COLLABORATOR",
+          "body": "> there is a real risk in fragmenting the ecosystem\r\n\r\nI don't think recommending 2 more leads to \"real risk\" of fragmentation.",
+          "createdAt": "2026-04-28T16:13:17Z",
+          "updatedAt": "2026-04-28T16:13:17Z"
+        },
+        {
+          "author": "davidben",
+          "authorAssociation": "NONE",
+          "body": "@bwesterb is right. The way key shares work in TLS, until draft-ietf-tls-key-share-prediction is deployed, there is a real cost to having two of these.",
+          "createdAt": "2026-04-28T21:12:19Z",
+          "updatedAt": "2026-04-28T21:12:19Z"
+        },
+        {
+          "author": "bwesterb",
+          "authorAssociation": "OWNER",
+          "body": "`draft-ietf-tls-key-share-prediction` solves the performance cost. It doesn't solve the security issue where different peers might choose different key shares due to limited resources, be they for hardware or development.",
+          "createdAt": "2026-04-28T21:19:18Z",
+          "updatedAt": "2026-04-28T21:19:50Z"
+        },
+        {
+          "author": "davidben",
+          "authorAssociation": "NONE",
+          "body": "Oh definitely. I just meant that draft is needed before extra key shares are not *disproportionately* more expensive. Even after that's resolved, we still pick up the general costs around fragmentation. I.e. I agree with you that this draft shouldn't extend to the other ones. :-)",
+          "createdAt": "2026-04-28T21:26:42Z",
+          "updatedAt": "2026-04-28T21:26:42Z"
         }
       ],
       "reviews": [
@@ -186,24 +222,26 @@
       "id": "PR_kwDORWyibc7T-D5v",
       "title": "Editorial",
       "url": "https://github.com/bwesterb/draft-westerbaan-tls-keyshare-recommendations/pull/4",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "muhammad-usama-sardar",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "- s/I/We\r\n- Don't need to expand the CRQC abbreviation in security considerations again (already done in intro)",
       "createdAt": "2026-04-20T13:41:41Z",
-      "updatedAt": "2026-04-27T10:47:04Z",
+      "updatedAt": "2026-04-28T16:14:41Z",
       "baseRepository": "bwesterb/draft-westerbaan-tls-keyshare-recommendations",
       "baseRefName": "main",
       "baseRefOid": "1a6b21a24df573bf7f2ec0f16287f6530061b123",
       "headRepository": "bwesterb/draft-westerbaan-tls-keyshare-recommendations",
       "headRefName": "sec-cons",
       "headRefOid": "01a8073f914ccc448a232407b2e23e1d08d4544f",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "closedAt": "2026-04-28T16:14:41Z",
+      "mergedAt": "2026-04-28T16:14:41Z",
+      "mergedBy": "bwesterb",
+      "mergeCommit": {
+        "oid": "883907f1bf2a5ad46e490479fffdf4372c139bc2"
+      },
       "comments": [
         {
           "author": "bwesterb",
@@ -232,9 +270,114 @@
           "body": "Apologies, I misunderstood it. Fixing the PR.",
           "createdAt": "2026-04-27T10:43:12Z",
           "updatedAt": "2026-04-27T10:43:12Z"
+        },
+        {
+          "author": "muhammad-usama-sardar",
+          "authorAssociation": "COLLABORATOR",
+          "body": "Updated comment and added text back. Ready to merge.",
+          "createdAt": "2026-04-28T15:47:55Z",
+          "updatedAt": "2026-04-28T15:47:55Z"
         }
       ],
-      "reviews": []
+      "reviews": [
+        {
+          "id": "PRR_kwDORWyibc75xx6d",
+          "commit": {
+            "abbreviatedOid": "01a8073"
+          },
+          "author": "bwesterb",
+          "authorAssociation": "OWNER",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2026-04-28T16:14:32Z",
+          "updatedAt": "2026-04-28T16:14:32Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 5,
+      "id": "PR_kwDORWyibc7WfVXu",
+      "title": "Fix title, thanks davidben",
+      "url": "https://github.com/bwesterb/draft-westerbaan-tls-keyshare-recommendations/pull/5",
+      "state": "MERGED",
+      "author": "bwesterb",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2026-04-28T21:04:23Z",
+      "updatedAt": "2026-04-28T21:09:10Z",
+      "baseRepository": "bwesterb/draft-westerbaan-tls-keyshare-recommendations",
+      "baseRefName": "main",
+      "baseRefOid": "883907f1bf2a5ad46e490479fffdf4372c139bc2",
+      "headRepository": "bwesterb/draft-westerbaan-tls-keyshare-recommendations",
+      "headRefName": "bas/david",
+      "headRefOid": "c19b47be0cb7753aed7f738cd060a3585dae6ff8",
+      "closedAt": "2026-04-28T21:09:10Z",
+      "mergedAt": "2026-04-28T21:09:10Z",
+      "mergedBy": "muhammad-usama-sardar",
+      "mergeCommit": {
+        "oid": "210ac64d5881429196e8d1f8aad728d652a0a28d"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDORWyibc7541Vg",
+          "commit": {
+            "abbreviatedOid": "c19b47b"
+          },
+          "author": "muhammad-usama-sardar",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2026-04-28T21:08:49Z",
+          "updatedAt": "2026-04-28T21:08:49Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 6,
+      "id": "PR_kwDORWyibc7Wg969",
+      "title": "Fix title, thanks Rob",
+      "url": "https://github.com/bwesterb/draft-westerbaan-tls-keyshare-recommendations/pull/6",
+      "state": "MERGED",
+      "author": "muhammad-usama-sardar",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "For reference: https://www.rfc-editor.org/rfc/rfc7322.html#section-3.4",
+      "createdAt": "2026-04-28T22:44:43Z",
+      "updatedAt": "2026-04-28T23:07:13Z",
+      "baseRepository": "bwesterb/draft-westerbaan-tls-keyshare-recommendations",
+      "baseRefName": "main",
+      "baseRefOid": "210ac64d5881429196e8d1f8aad728d652a0a28d",
+      "headRepository": "bwesterb/draft-westerbaan-tls-keyshare-recommendations",
+      "headRefName": "title",
+      "headRefOid": "2109a98f281d581baa69b852a5ecc91a93d99a34",
+      "closedAt": "2026-04-28T22:52:39Z",
+      "mergedAt": "2026-04-28T22:52:39Z",
+      "mergedBy": "bwesterb",
+      "mergeCommit": {
+        "oid": "3ef55398a07a87022cd0fa4fea85c4e722fdd344"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDORWyibc757E_1",
+          "commit": {
+            "abbreviatedOid": "2109a98"
+          },
+          "author": "bwesterb",
+          "authorAssociation": "OWNER",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2026-04-28T22:52:33Z",
+          "updatedAt": "2026-04-28T22:52:33Z",
+          "comments": []
+        }
+      ]
     }
   ]
 }
