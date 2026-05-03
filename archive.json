@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2026-04-30T03:50:20.771400+00:00",
+  "timestamp": "2026-05-03T03:57:07.635565+00:00",
   "repo": "bwesterb/draft-westerbaan-tls-keyshare-recommendations",
   "labels": [
     {
@@ -49,7 +49,24 @@
       "color": "ffffff"
     }
   ],
-  "issues": [],
+  "issues": [
+    {
+      "number": 8,
+      "id": "I_kwDORWyibc8AAAABBBnHcA",
+      "title": "Editorial nits",
+      "url": "https://github.com/bwesterb/draft-westerbaan-tls-keyshare-recommendations/issues/8",
+      "state": "OPEN",
+      "author": "muhammad-usama-sardar",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "[Archive link](https://mailarchive.ietf.org/arch/msg/tls/UGCnpMQk-CqL1TyfYLHEHPtlzGs/)\n\n> I'm having trouble parsing this text:\n> \n> \"A future cryptographically relevant quantum computer\n> (CRQC) {{RFC9794}} can decrypt TLS handshakes recorded\n> today that do not use post-quantum algorithms for\n> their key shares: algorithms designed to be resistant\n> against quantum attack. \"\n> \n> There seems to be missing a sentence fragment after\n> the colon.\n> \n> Is it intended to be s \"...for their 'key shares:\n> algorithms' designed to be...\" ?\n> \n> Seems awkward phrasing.  Perhaps\n> \n> \"...may be able to decrypt TLS handshakes recorded\n> today that do not use post-quantum key exchange\n> algorithms designed to be resistant against quantum\n> attacks.\"\n> \n> Although the \"resistant against...\" seems to me to be\n> implied in any \"post-quantum algorithm\".\n> \n> (I also favor \"CRQCs _may be able to_\" rather than\n> _can_, since they don't yet exist.)\n> \n> \n---\n> This sentence is also awkward, IMO:\n> \n> \"a TLS connection that negotiated a non-post quantum\n> key share can be recorded decrypted in the future.\"\n> \n> The phrasing \"can be recorded decrypted\" seems odd.\n> \n> Perhaps\n> \n> \"can be recorded to be decrypted in the future.\"\n> \n> \n---\n> Another quibble:\n> \n> \"allows for an active quantum attack that achieves\n> MITM,\"\n> \n> \"achieving MITM\" doesn't seem quite accurate.  What's\n> accomplished is a quantum attack to decrypt the data\n> in transit, which, to me, anyway, is different from\n> posing successfully as a MitM and is more of a\n> successful eavesdrop.  Mallory has powers Eve does\n> not, but a kex compromise only yields eavesdropping\n> capability, no?\n> \n> Too pedantic?",
+      "createdAt": "2026-05-01T09:32:53Z",
+      "updatedAt": "2026-05-01T09:32:53Z",
+      "closedAt": null,
+      "comments": []
+    }
+  ],
   "pulls": [
     {
       "number": 1,
@@ -375,6 +392,54 @@
           "body": "",
           "createdAt": "2026-04-28T22:52:33Z",
           "updatedAt": "2026-04-28T22:52:33Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 7,
+      "id": "PR_kwDORWyibc7XUQ2Z",
+      "title": "sec cons",
+      "url": "https://github.com/bwesterb/draft-westerbaan-tls-keyshare-recommendations/pull/7",
+      "state": "OPEN",
+      "author": "muhammad-usama-sardar",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "- eavesdrop, MITM, or impersonate\r\n\r\nRef: https://mailarchive.ietf.org/arch/msg/tls/x-nAqZ__ubROzDnpyOqMg8M_vfg/",
+      "createdAt": "2026-05-01T01:46:52Z",
+      "updatedAt": "2026-05-01T10:25:07Z",
+      "baseRepository": "bwesterb/draft-westerbaan-tls-keyshare-recommendations",
+      "baseRefName": "main",
+      "baseRefOid": "3ef55398a07a87022cd0fa4fea85c4e722fdd344",
+      "headRepository": "bwesterb/draft-westerbaan-tls-keyshare-recommendations",
+      "headRefName": "mitm",
+      "headRefOid": "a20dde41a7558590630f8beb08250c550f76eb69",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [
+        {
+          "author": "muhammad-usama-sardar",
+          "authorAssociation": "COLLABORATOR",
+          "body": "Addresses #8.",
+          "createdAt": "2026-05-01T10:25:07Z",
+          "updatedAt": "2026-05-01T10:25:07Z"
+        }
+      ],
+      "reviews": [
+        {
+          "id": "PRR_kwDORWyibc76-4VU",
+          "commit": {
+            "abbreviatedOid": "a20dde4"
+          },
+          "author": "bwesterb",
+          "authorAssociation": "OWNER",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2026-05-01T10:03:46Z",
+          "updatedAt": "2026-05-01T10:03:46Z",
           "comments": []
         }
       ]
