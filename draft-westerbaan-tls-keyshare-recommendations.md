@@ -49,8 +49,7 @@ This document updates the TLS Supported Groups registry
 (previously EC Named Curve Registry)
 in the light
 of the future arrival of cryptographically relevant quantum computers:
-it sets the Recommended column of X25519MLKEM768 to Y,
-and removes the Recommended status from non-post-quantum key shares.
+it removes the Recommended status from non-post-quantum key shares.
 
 [[ NOTE We use key share in the title and here as it's more accurate
    than "group" and perhaps more well known in the context TLS
@@ -71,9 +70,7 @@ This threat is known as "harvest now, decrypt later" (HNDL)
 To address this threat, this document updates the
 [TLS Supported Groups registry](https://www.iana.org/assignments/tls-parameters/tls-parameters.xhtml#tls-parameters-8)
 as defined in {{Section 6 of RFC9847}}:
-it marks X25519MLKEM768 as Recommended (Y),
-as it is a post-quantum key share with widespread support,
-and removes the Recommended status from non-post-quantum key shares
+it removes the Recommended status from non-post-quantum key shares
 by setting them to N.
 
 
@@ -102,7 +99,6 @@ This document updates the [TLS Supported Groups registry](https://www.iana.org/a
 | 24    | secp384r1          | N           |
 | 29    | x25519             | N           |
 | 30    | x448               | N           |
-| 4588  | X25519MLKEM768     | Y           |
 
 
 --- back
