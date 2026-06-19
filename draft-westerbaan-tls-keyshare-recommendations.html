@@ -8,11 +8,12 @@
 <meta content="Bas Westerbaan" name="author">
 <meta content="Muhammad Usama Sardar" name="author">
 <meta content="
-       This document recommends X25519MLKEM768 for use in TLS
-by updating its entry in the TLS Supported Groups registry
+       This document updates the TLS Supported Groups registry
 (previously EC Named Curve Registry)
-to Recommended in the light
-of the future arrival of cryptographically relevant quantum computers. 
+in the light
+of the future arrival of cryptographically relevant quantum computers:
+it sets the Recommended column of X25519MLKEM768 to Y,
+and removes the Recommended status from non-post-quantum key shares. 
        [[ NOTE We use key share in the title and here as it's more accurate
    than &quot;group&quot; and perhaps more well known in the context TLS
    than key agreement or key exchange. ]] 
@@ -1093,11 +1094,12 @@ svg {
 <h1 id="title">Updated Recommendations for TLS Key Shares</h1>
 <section id="section-abstract">
       <h2 id="abstract"><a href="#abstract" class="selfRef">Abstract</a></h2>
-<p id="section-abstract-1">This document recommends X25519MLKEM768 for use in TLS
-by updating its entry in the TLS Supported Groups registry
+<p id="section-abstract-1">This document updates the TLS Supported Groups registry
 (previously EC Named Curve Registry)
-to Recommended in the light
-of the future arrival of cryptographically relevant quantum computers.<a href="#section-abstract-1" class="pilcrow">¶</a></p>
+in the light
+of the future arrival of cryptographically relevant quantum computers:
+it sets the Recommended column of X25519MLKEM768 to Y,
+and removes the Recommended status from non-post-quantum key shares.<a href="#section-abstract-1" class="pilcrow">¶</a></p>
 <p id="section-abstract-2">[[ NOTE We use key share in the title and here as it's more accurate
    than "group" and perhaps more well known in the context TLS
    than key agreement or key exchange. ]]<a href="#section-abstract-2" class="pilcrow">¶</a></p>
@@ -1210,9 +1212,11 @@ This threat is known as "harvest now, decrypt later" (HNDL)
 <span>[<a href="#I-D.ietf-pquip-pqc-engineers" class="cite xref">I-D.ietf-pquip-pqc-engineers</a>]</span>.<a href="#section-1-1" class="pilcrow">¶</a></p>
 <p id="section-1-2">To address this threat, this document updates the
 <a href="https://www.iana.org/assignments/tls-parameters/tls-parameters.xhtml#tls-parameters-8">TLS Supported Groups registry</a>
-to mark X25519MLKEM768 as Recommended (Y)
-as defined in <span><a href="https://rfc-editor.org/rfc/rfc9847#section-6" class="relref">Section 6</a> of [<a href="#RFC9847" class="cite xref">RFC9847</a>]</span>,
-as it is a post-quantum key share with widespread support.<a href="#section-1-2" class="pilcrow">¶</a></p>
+as defined in <span><a href="https://rfc-editor.org/rfc/rfc9847#section-6" class="relref">Section 6</a> of [<a href="#RFC9847" class="cite xref">RFC9847</a>]</span>:
+it marks X25519MLKEM768 as Recommended (Y),
+as it is a post-quantum key share with widespread support,
+and removes the Recommended status from non-post-quantum key shares
+by setting them to N.<a href="#section-1-2" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="conventions-and-definitions">
@@ -1255,6 +1259,26 @@ even if the server certificate is post quantum.<a href="#section-3-2" class="pil
           </tr>
         </thead>
         <tbody>
+          <tr>
+            <td class="text-left" rowspan="1" colspan="1">23</td>
+            <td class="text-left" rowspan="1" colspan="1">secp256r1</td>
+            <td class="text-left" rowspan="1" colspan="1">N</td>
+          </tr>
+          <tr>
+            <td class="text-left" rowspan="1" colspan="1">24</td>
+            <td class="text-left" rowspan="1" colspan="1">secp384r1</td>
+            <td class="text-left" rowspan="1" colspan="1">N</td>
+          </tr>
+          <tr>
+            <td class="text-left" rowspan="1" colspan="1">29</td>
+            <td class="text-left" rowspan="1" colspan="1">x25519</td>
+            <td class="text-left" rowspan="1" colspan="1">N</td>
+          </tr>
+          <tr>
+            <td class="text-left" rowspan="1" colspan="1">30</td>
+            <td class="text-left" rowspan="1" colspan="1">x448</td>
+            <td class="text-left" rowspan="1" colspan="1">N</td>
+          </tr>
           <tr>
             <td class="text-left" rowspan="1" colspan="1">4588</td>
             <td class="text-left" rowspan="1" colspan="1">X25519MLKEM768</td>
