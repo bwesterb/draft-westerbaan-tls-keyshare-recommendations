@@ -83,10 +83,10 @@ as it is a post-quantum key share with widespread support.
 
 Before the arrival of a CRQC,
 a TLS connection that negotiated a non-post quantum key share can be recorded
-and decrypted in the future.
+to be decrypted in the future.
 
 After the arrival of a CRQC, allowing a non-post quantum key share to be
-negotiated allows for an active quantum attack that achieves MITM,
+negotiated allows for eavesdrop or an active quantum attack that achieves MITM or impersonation,
 even if the server certificate is post quantum.
 
 # IANA Considerations
